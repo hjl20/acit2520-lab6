@@ -78,10 +78,14 @@ const grayScale = (pathIn, pathOut) => {
             for (var x = 0; x < this.width; x++) {
               var idx = (this.width * y + x) << 2;
 
+              let gray = this.data[idx] * 0.3 + this.data[idx + 1] * 0.59 + this.data[idx + 2] * 0.11;
               // grayscale color
-              this.data[idx] = this.data[idx]/3;
-              this.data[idx + 1] = this.data[idx + 1]/3;
-              this.data[idx + 2] = this.data[idx + 2]/3;
+              this.data[idx] = gray;
+              this.data[idx + 1] = gray;
+              this.data[idx + 2] = gray;
+              // this.data[idx] = this.data[idx]/3;
+              // this.data[idx + 1] = this.data[idx + 1]/3;
+              // this.data[idx + 2] = this.data[idx + 2]/3;
 
             }
           }
